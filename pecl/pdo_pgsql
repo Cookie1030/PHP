@@ -1,0 +1,10 @@
+yum -y install postgresql-devel
+find / -name pdo_pgsql
+cd /usr/local/src/php-5.5.15/ext/pdo_pgsql
+/srv/php-5.5.15/bin/phpize
+./configure -with-php-config=/srv/php-5.5.15/bin/php-config
+make
+make install
+pecl install pdo_pgsql
+vim /srv/php/etc/conf.d/pdo_pgsql.ini
+   extension=pdo_pgsql.so
