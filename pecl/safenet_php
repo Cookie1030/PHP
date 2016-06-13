@@ -1,0 +1,16 @@
+
+http://pan.baidu.com/s/1o8MpDea?qq-pf-to=pcqq.c2c
+
+unzip safenet-php.zip
+cd safenet-php
+
+/srv/php-5.5.22/bin/phpize 
+./configure --with-php-config=/srv/php-5.5.22/bin/php-config
+make
+make install
+
+/etc/init.d/php-fpm restart
+
+-----------test------------
+php -r "echo safenet_decrypt('helloworld');"
+php -r "echo safenet_encrypt('helloworld');"
