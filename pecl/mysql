@@ -1,0 +1,14 @@
+cd /usr/local/src/php-5.5.15/ext/mysql
+/srv/php-5.5.15/bin/phpize
+./configure --with-php-config=/srv/php-5.5.15/bin/php-config
+make
+make install
+
+
+-------------------------------------------
+编辑好之后需要修改php.ini文件
+extension=""---修改路径 .so文件所在目录(make install后会有提示)
+extension=mysql.so-----添加
+
+
+重启php-fpm和nginx
